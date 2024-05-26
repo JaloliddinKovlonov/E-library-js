@@ -1,25 +1,20 @@
 import Footer from "./Footer";
-import Header from "./Header";
+import StickyNavbar from "./Header";
 import Card from "./Card";
 
 function App() {
   return (
-    <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: "#F7FAFC", minHeight: "100vh" }}>
-      <Header></Header>
+    <div className="flex flex-col h-screen justify-between">
+      <div className="relative z-10 w-full rounded-3xl bg-[#e5e8eb]">
+        <StickyNavbar></StickyNavbar>
+      </div>
       <div className="container mt-4 pt-4">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
-          <div className="col mb-4">
-            <Card />
-          </div>
-          <div className="col mb-4">
-            <Card />
-          </div>
-          <div className="col mb-4">
-            <Card />
-          </div>
-          <div className="col mb-4">
-            <Card />
-          </div>
+        <h3 className=" pb-0">Top rated books</h3>
+        <div className="p-4 border-2 border-gray-100 bg-gray-100 rounded-3xl grid grid-cols-1 md:grid-cols-3 gap-4 ">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
       <Footer></Footer>

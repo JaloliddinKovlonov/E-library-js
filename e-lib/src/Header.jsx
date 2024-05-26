@@ -1,42 +1,41 @@
-import React from "react";
+import { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 
 function Navbar() {
+
+  const [nav, setNav] = useState(true);
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ backgroundColor: "#e3f2fd" }}>
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Features</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Pricing</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form className="d-flex">
-            <input className="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success rounded-circle" type="submit">
-              <i className="fas fa-search"></i>
-            </button>
-          </form>
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Another Link</a>
-            </li>
-          </ul>
-        </div>
+    <div className="flex justify-between items-center h-[92px] max-w-[1240px] mx-auto px-4">
+      <h1 className="w-full text-3xl font-bold font-noto-serif text-[#0D141C]">
+        E-library
+      </h1>
+      <ul className=" my-0 hidden md:flex">
+        <li className="p-4">Home</li>
+        <li className="p-4">Explore</li>
+        <li className="p-4">Community</li>
+        <li className="p-4">About</li>
+      </ul>
+      <div onClick={handleNav} className="block md:hidden">
+        {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
-    </nav>
+      <div className={!nav ? "fixed left-0 top-0 w-[60%] h-full border-r rounded-r-3xl bg-[#e5e8eb] ease-in-out duration-500" : "fixed left-[-100%]"}>
+        <h1 className="w-full text-3xl font-bold font-noto-serif text-[#0D141C] m-4">
+          E-library
+        </h1>
+        <ul className="uppercase p-4">
+          <li className="p-4 border-b border-gray-900">Home</li>
+          <li className="p-4 border-b border-gray-900">Explore</li>
+          <li className="p-4 border-b border-gray-900">Community</li>
+          <li className="p-4">About</li>
+        </ul>
+      </div>
+    </div>
   );
 }
 

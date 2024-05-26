@@ -3,11 +3,14 @@ import bookimg from "./assets/Sapiens.png";
 
 function Card() {
   return (
-    <div className="card text-center" style={{ width: "182px", height: "254px" }}>
-      <img src={bookimg} className="card-img-top" alt="..." style={{ width: "182px", height: "182px" }}></img>
-      <div className="card-body">
-        <p className="card-text" style={{fontSize: "14px"}}>
-          Some quick example text.
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+      <img className="w-full h-48 object-cover" src={bookimg} alt="Sunset in the mountains"></img>
+      <div className="px-4 py-2">
+        <div className="font-bold text-xl mb-2">Sapiens</div>
+        <p className="text-gray-700 ext-sm">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+          nihil.
         </p>
       </div>
     </div>
