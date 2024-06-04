@@ -26,8 +26,7 @@ function App() {
           <Card />
           <Card />
         </div>
-
-        <About />
+        <div id="about" className="section"><About></About></div>
 
       </div>
       <Footer />
